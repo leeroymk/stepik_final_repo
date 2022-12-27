@@ -12,11 +12,11 @@ class LoginPage(BasePage):
         assert 'login' in self.browser.current_url, 'You are not at LOGIN page'
 
     def should_be_login_form(self):
-        assert self.browser.find_element(
+        assert self.is_element_present(
             *LoginPageLocators.Login_link
-            ).is_displayed(), 'No Login form at this page...'
+            ), 'No Login form at this page...'
 
     def should_be_register_form(self):
-        assert self.browser.find_element(
+        assert self.is_element_present(
             *LoginPageLocators.Registration_link_email
-            ).is_displayed(), 'No Registration form at this page...'
+            ), 'No Registration form at this page...'
